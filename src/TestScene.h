@@ -11,7 +11,7 @@ class TestScene;
 #include "Textbox.h"
 #include "testAnimation.h"
 #include "Animator.h"
-
+#include "Shaders/SkyBoxShader.h"
 
 class TestScene :public Scene {
 public:
@@ -25,7 +25,7 @@ public:
 	//3D object
 	GameObject* testObject = nullptr;
 	TestAnimationManager* testAnimation = nullptr;
-
+	SkyBoxShader* skyboxShader = nullptr;
 
 	//2D UI / GUI
 	ImageBox* button = nullptr;

@@ -85,6 +85,13 @@ void TestScene::init()
 		testObject->awake();
 	}
 
+	//skybox
+	if (!skyboxShader) {
+		//skybox's initialization
+		skyboxShader = new SkyBoxShader;
+		skyboxShader->skyboxInitialize();
+	}
+
 	//rotation button
 	if (!button) {
 		//button's initialization
@@ -145,6 +152,9 @@ void TestScene::draw()
 
 	//enable depth test for 3D render
 	glEnable(GL_DEPTH_TEST);
+
+	//draw skybox
+	skyboxShader->draw(viewCamera->GetViewMatrix(), viewCamera->GetProjectionMatrix());
 
 	//draw 3D object
 	testObject->draw(viewCamera);
